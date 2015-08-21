@@ -1,0 +1,254 @@
+body{
+    background-color: #efeff0;
+}
+a:focus {
+    outline:none;
+    -moz-outline:none;
+}
+
+/*********header*******/
+.am-header-haiya{
+    background-color: #f9f9f9;
+}
+.am-header-haiya a{
+    color: #221715;
+}
+
+/*****fast-nav******/
+.fast-nav{
+    background-color: #FFFFFF;
+}
+.fast-nav .am-nav{
+    margin: 0;
+}
+.fast-nav .am-nav li a{
+    line-height: 1.2;
+    display: inline;
+    color: #e26f72;
+}
+.fast-nav .am-nav li a span{
+    display: block;
+}
+.fast-nav > .am-nav > li > a:focus, .fast-nav > .am-nav > li > a:hover{
+    background-color: transparent;
+}
+
+/********snapping**************/
+.snapping{
+    background-color: #ffffff;
+    margin: 15px 0;
+}
+.text-cont{
+    text-align: center;
+}
+.row-title{
+    padding: 3px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.row-goods-list .am-avg-sm-4{
+    padding: 0 10px;
+}
+.row-goods-list .am-thumbnail{
+    margin: 0;
+}
+.row-goods-list ul li a span{
+    color: #000000;
+    display: block;
+    text-align: center;
+}
+.row-goods-list ul li a .zhe{
+    background-color: #e70012;
+    color: #FFFFFF;
+    display: block;
+    text-align: center;
+}
+
+.thumbnail{
+    height: auto;
+    max-width: 100%;
+}
+.hy-cat{
+    background-color: #FFFFFF;
+}
+.hy-cat .am-fl{
+    width: 50%;
+    position: relative;
+}
+.hy-cat .am-fl a span{
+    background-color: #000000;
+    max-width: 100px;
+    max-height: 80px;
+    padding: 4px;
+    line-height: normal;
+    display: block;
+    position: absolute;
+    text-align: center;
+    color: #FFFFFF;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    opacity:0.6;
+}
+
+.goods-list{
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    display: block;
+}
+.index-nav ul li a{
+    color: #ef818e;
+}
+
+/********goodsinfo**********/
+.goodsinfo{
+    background-color: #ffffff;
+    border-bottom: 1px solid #c6c5c5;
+    padding: 5px;
+}
+.goodsinfo h3 small{
+    color: #ce4f3d;
+}
+.goodsinfo-cny{
+    color: #c30d22;
+}
+.goodsinfo-y{
+    color: #575555;
+}
+.goods-desc{
+    margin: 15px 0 0 0;
+}
+.goods-desc .am-panel{
+    margin-bottom: 0;
+}
+
+
+/********goods-info**********/
+.am-navbar-default .am-navbar-nav{
+    background-color: #32312f;
+    filter:alpha(opacity=80);
+    -moz-opacity:0.8;
+    opacity:0.8;
+}
+
+.menu-nav .am-navbar-nav a{
+    height: 80%;
+    width: 80%;
+}
+
+.menu-nav .am-btn-song{
+    background-color: #65af53;
+}
+
+.menu-nav .am-btn-cart{
+    background-color: #e5b7b6;
+}
+
+/********login**********/
+
+.divider{
+    border-bottom: 1px solid #dedede;
+}
+
+#container{
+    position: relative;
+    min-height: 500px;
+}
+
+.login_qq{
+    width: 96%;
+}
+
+#button{
+    position: absolute;
+    bottom: 50px;
+    width: 96%;
+}
+
+#reg{
+    position: absolute;
+    bottom: 5px;
+    width: 96%;
+}
+
+/**********conpun******/
+.coupon-ul li{
+    background-color: #ffc6b5;
+}
+.coupon-table td{
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+/********changeadd*******/
+.changeadd-li{
+    padding-top: 1.0em;
+}
+
+.changeadd-icon{
+    vertical-align: middle;
+    padding-left: 1.5em;
+}
+
+.changeadd-icon-color{
+    color: #ff0000;
+}
+
+/********manageadd*******/
+.manageadd-icon{
+    color: #ff0000;
+}
+/**********cart**********/
+.hy-cart{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.hy-cart li{
+    clear: both;
+    background-color: #949595;
+    height: 44px;
+}
+.hy-cart li a{
+    line-height: 25px;
+    color: #ffffff;
+    padding: 0 10px;
+    display: block;
+}
+
+.hy-cart-form ul{
+    list-style: none;
+}
+.hy-cart-form-list li{
+    display: block;
+}
+.hy-cart-list li{
+    margin: 5px 0;
+}
+.hy-cart-number a{
+    border: 1px solid #CCCCCC;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    margin: 0 5px;
+}
+#cart-submit{
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    position: fixed;
+    bottom: 0;
+    height: 37px;
+    background-color: #CCCCCC;
+}
+#cart-submit p{
+    line-height: 37px;
+}
+/*******user**************/
+.user{
+    background: url("../images/user-bg2.jpg") top center no-repeat;
+    background-size:cover
+    height: 350px;
+}
+.row{
+    padding: 15% 0 0 0;
+}

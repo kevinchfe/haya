@@ -1,0 +1,108 @@
+<include file="Public/header"/>
+<body>
+<div id="wrapper">
+    <include file="Public/nav"/>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <include file="Public/sidebar"/>
+        </div>
+        <div class="wrapper wrapper-content">
+            <!--面包屑-->
+            <include file="Public/crumb"/>
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5 class="pull-left">商品列表</h5>
+                                <h5 class="pull-right">
+                                    <a href="{:U('Admin/Goods/addGoods')}">添加商品</a>
+                                </h5>
+                            </div>
+                            <div class="ibox-content">
+                                <table class="table table-striped table-bordered table-hover dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th>商品名</th>
+                                        <th>商品编号</th>
+                                        <th>所属分类</th>
+                                        <th>所属品牌</th>
+                                        <th>本店价</th>
+                                        <th>原价</th>
+                                        <th>成本价</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <volist name="goods_list" id="goods_list">
+                                        <tr class="gradeX">
+                                            <td>{$goods_list.goods_name}</td>
+                                            <td>{$goods_list.goods_sn}</td>
+                                            <td>{$goods_list.cat_name}</td>
+                                            <td>{$goods_list.brand_name}</td>
+                                            <td>{$goods_list.goods_price}</td>
+                                            <td>{$goods_list.original_price}</td>
+                                            <td>{$goods_list.cost_price}</td>
+                                            <td>
+                                                <a href="{:U('Admin/Goods/editGoods?gid='.$goods_list['id'].'')}">编辑</a>
+                                                <a href="{:U('Admin/Goods/del?gid='.$goods_list['id'].'')}">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--load footer-->
+        <include file="Public/footer"/>
+        <script src="__PUBLIC__/admin/js/plugins/jeditable/jquery.jeditable.js"></script>
+
+        <!-- Data Tables -->
+        <script src="__PUBLIC__/admin/js/plugins/dataTables/jquery.dataTables.js"></script>
+        <script src="__PUBLIC__/admin/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+        <!-- Page-Level Scripts -->
+        <script>
+            $(document).ready(function () {
+                $('.dataTables-example').dataTable();
+
+                /* Init DataTables */
+                var oTable = $('#editable').dataTable();
+
+                /* Apply the jEditable handlers to the table */
+                oTable.$('td').editable('../example_ajax.php', {
+                    "callback": function (sValue, y) {
+                        var aPos = oTable.fnGetPosition(this);
+                        oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                    },
+                    "submitdata": function (value, settings) {
+                        return {
+                            "row_id": this.parentNode.getAttribute('id'),
+                            "column": oTable.fnGetPosition(this)[2]
+                        };
+                    },
+
+                    "width": "90%",
+                    "height": "100%"
+                });
+
+
+            });
+
+            function fnClickAddRow() {
+                $('#editable').dataTable().fnAddData([
+                    "Custom row",
+                    "New row",
+                    "New row",
+                    "New row",
+                    "New row"]);
+
+            }
+        </script>

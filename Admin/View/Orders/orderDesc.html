@@ -1,0 +1,118 @@
+<include file="Public/header"/>
+<body>
+<div id="wrapper">
+    <include file="Public/nav"/>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <include file="Public/sidebar"/>
+        </div>
+        <div class="wrapper wrapper-content">
+            <!--面包屑-->
+            <include file="Public/crumb"/>
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5 class="pull-left">订单详情</h5>
+                                <h5 class="pull-right">
+                                    <a href="{:U('Admin/Orders/index')}">订单列表</a>
+                                </h5>
+                            </div>
+                            <div class="ibox-content">
+                                <table class="table table-striped table-bordered table-hover dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th>订单号</th>
+                                        <th>收货人手机</th>
+                                        <th>支付方式</th>
+                                        <th>收货地址</th>
+                                        <th>备注</th>
+                                        <th>快递</th>
+
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <volist name="data" id="orders_list">
+                                        <tr class="gradeX">
+                                            <td>{$orders_list.order_sn}</td>
+                                            <td>{$orders_list.order_time|date='y-m-d H:i',###}</td>
+                                            <td>{$orders_list.mobile}</td>
+                                            <td>{$orders_list.order_price}</td>
+                                            <td>{$orders_list.order_cost}</td>
+                                            <td>{$orders_list.preferential_price}</td>
+                                            <td>
+                                                <switch name="orders_list.order_status">
+                                                    <case value="1">已付款</case>
+                                                    <case value="2">系统确认</case>
+                                                    <case value="3">已发货</case>
+                                                    <case value="4">确认收货</case>
+                                                    <case value="11">取消</case>
+                                                    <case value="12">过期</case>
+                                                    <case value="13">退货</case>
+                                                    <default />未付款
+                                                </switch>
+                                            </td>
+                                            <td>
+                                                <a href="{:U('Admin/Orders/orderDesc?id='.$orders_list['id'].'')}">详情</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--load footer-->
+        <include file="Public/footer"/>
+        <script src="__PUBLIC__/admin/js/plugins/jeditable/jquery.jeditable.js"></script>
+
+        <!-- Data Tables -->
+        <script src="__PUBLIC__/admin/js/plugins/dataTables/jquery.dataTables.js"></script>
+        <script src="__PUBLIC__/admin/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+        <!-- Page-Level Scripts -->
+        <script>
+            $(document).ready(function () {
+                $('.dataTables-example').dataTable();
+
+                /* Init DataTables */
+                var oTable = $('#editable').dataTable();
+
+                /* Apply the jEditable handlers to the table */
+                oTable.$('td').editable('../example_ajax.php', {
+                    "callback": function (sValue, y) {
+                        var aPos = oTable.fnGetPosition(this);
+                        oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                    },
+                    "submitdata": function (value, settings) {
+                        return {
+                            "row_id": this.parentNode.getAttribute('id'),
+                            "column": oTable.fnGetPosition(this)[2]
+                        };
+                    },
+
+                    "width": "90%",
+                    "height": "100%"
+                });
+
+
+            });
+
+            function fnClickAddRow() {
+                $('#editable').dataTable().fnAddData([
+                    "Custom row",
+                    "New row",
+                    "New row",
+                    "New row",
+                    "New row"]);
+
+            }
+        </script>

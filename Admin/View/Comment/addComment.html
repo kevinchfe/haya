@@ -1,0 +1,119 @@
+<include file="Public/header"/>
+<link rel="stylesheet" href="__PUBLIC__/simditor/styles/simditor.css"/>
+<link href="__PUBLIC__/Admin/css/plugins/switchery/switchery.css" rel="stylesheet">
+<body>
+<div id="wrapper">
+    <include file="Public/nav"/>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <include file="Public/sidebar"/>
+        </div>
+        <div class="wrapper wrapper-content">
+            <!--面包屑-->
+            <include file="Public/crumb"/>
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>添加评论</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <form method="post" class="form-horizontal" action="{:U('Admin/Comment/addComment')}">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">所属商品：</label>
+
+                                        <div class="col-sm-6">
+                                            <select class="form-control" name="goods_id">
+                                                <volist name="goods" id="goods_list">
+                                                    <option value="{$goods_list.id}">{$goods_list.goods_name}</option>
+                                                </volist>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">所属用户：</label>
+
+
+                                        <div class="col-sm-6">
+                                            <select class="form-control" name="user_id">
+                                                <volist name="user" id="user_list">
+                                                    <option value="{$user_list.id}">{$user_list.mobile}</option>
+                                                </volist>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">IP地址：</label>
+
+                                        <div class="col-sm-6">
+                                            <input type="text" name="com_ip" value="" class=""/>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">评论时间：</label>
+
+                                        <div class="col-sm-6">
+                                            <input type="text" name="com_time" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">是否显示：</label>
+
+                                        <div class="col-sm-6">
+                                            <input type="checkbox" name="is_show" value="1" class="js-switch"/>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">评论内容</label>
+
+                                        <div class="col-sm-10">
+                                            <textarea name="com_content" id="editor" placeholder="这里输入内容" autofocus
+                                                      style="margin: 0px; width: 1231px; height: 494px;">
+
+                                            </textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-2">
+                                            <button class="btn btn-primary" type="submit">保存内容</button>
+                                            <button class="btn btn-white" type="reset">取消</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--load footer-->
+        <include file="Public/footer"/>
+        <script type="text/javascript" src="__PUBLIC__/simditor/scripts/module.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/simditor/scripts/hotkeys.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+        <!-- Switchery -->
+        <script src="__PUBLIC__/Admin/js/plugins/switchery/switchery.js"></script>
+
+        <script>
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, {
+                color: '#1AB394'
+            });
+
+            var ue = UE.getEditor('editor');
+
+        </script>

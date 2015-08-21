@@ -1,0 +1,237 @@
+<!-- 公共头部 -->
+<include file="Public:header" />
+
+<header data-am-widget="header" class="am-header am-header-haiya">
+    <div class="am-header-left am-header-nav">
+        <a href="#right-link" class="">
+            <i class="am-header-icon am-icon-bars"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">彩聚商城</a>
+    </h1>
+
+    <div class="am-header-right am-header-nav">
+        <i class="am-header-icon am-icon-search"></i>
+    </div>
+
+</header>
+
+<div class="am-container">
+    <div data-am-widget="slider" class="am-slider am-slider-a1">
+        <ul class="am-slides">
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+            </li>
+        </ul>
+    </div>
+    <!--slider end-->
+
+    <div class="fast-nav">
+        <ul class="am-nav am-nav-pills am-nav-justify">
+            <li>
+                <a href="{:U('Home/User/Collect')}">
+                    <span class="am-icon-heart"></span>
+                    <span class="am-navbar-label">关注{$Think.session.user_id}</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span><i class="am-icon-rocket"></i></span>
+                    <span class="am-navbar-label">查询</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span><i class="am-icon-align-justify"></i></span>
+                    <span class="am-navbar-label">充值</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span><i class="am-icon-user"></i></span>
+                    <span class="am-navbar-label">红包</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="am-nav am-nav-pills am-nav-justify">
+            <li>
+                <a href="#">
+                    <span><i class="am-icon-home am-icon-fw"></i></span>
+                    <span class="am-navbar-label">个人中心</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span><i class="am-icon-cny"></i></span>
+                    <span class="am-navbar-label">精选</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span><i class="am-icon-shopping-cart"></i></span>
+                    <span class="am-navbar-label">购物车</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span><i class="am-icon-user"></i></span>
+                    <span class="am-navbar-label">更多</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--fast-nav end-->
+
+    <div class="snapping">
+        <div class="row-title">
+            <div class="am-u-sm-4">
+                <i class="am-icon-clock-o"></i>
+                限时抢购
+            </div>
+            <div class="am-u-sm-4 text-cont">
+                00天00:00
+            </div>
+            <div class="am-fr am-padding-horizontal">
+                <a href="#" class="am-link-muted">
+                    限时秒杀
+                    <i class="am-icon-angle-right"></i>
+                </a>
+            </div>
+            <div class="am-cf"></div>
+        </div>
+
+        <div class="row-goods-list">
+            <ul class="am-avg-sm-4 am-thumbnails">
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Home/images/123456.jpg" class="am-thumbnail">
+                        <span>￥300.00</span>
+                        <span class="zhe">7.0折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Home/images/123456.jpg" class="am-thumbnail">
+                        <span>￥300.00</span>
+                        <span class="zhe">7.0折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Home/images/123456.jpg" class="am-thumbnail">
+                        <span>￥300.00</span>
+                        <span class="zhe">7.0折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Home/images/123456.jpg" class="am-thumbnail">
+                        <span>￥300.00</span>
+                        <span class="zhe">7.0折</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--row-goods-list end-->
+    </div>
+    <!--snapping end-->
+    <div class="hy-cat am-cf">
+        <div class="am-fl">
+            <a href="#" class="">
+                <span>项链</span>
+                <img src="__PUBLIC__/Home/images/cat33_01.png" class="thumbnail">
+            </a>
+        </div>
+        <div class="am-fl">
+            <a href="#" class="">
+                <span>耳钉</span>
+                <img src="__PUBLIC__/Home/images/cat33_02.png" class="thumbnail">
+            </a>
+            <a href="#" class="">
+                <span>手链</span>
+                <img src="__PUBLIC__/Home/images/cat33_03.png" class="thumbnail">
+            </a>
+        </div>
+    </div>
+
+    <div class="goods-list">
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+            <h2 class="am-titlebar-title ">为你推荐</h2>
+        </div>
+
+        <div class="goods-show-list">
+            <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2 am-avg-md-3 am-avg-lg-4 am-gallery-imgbordered" data-am-gallery="{}">
+                <volist name="goodsList" id="goodsList">
+                <li>
+                    <div class="am-gallery-item">
+                        <a href="{:U('Home/Goods/goodsDesc?gid='.$goodsList['id'].'')}" class="">
+                            <img src="__ROOT__/{$goodsList.pic_url}" alt="{$goodsList.goods_name}"
+                                    />
+                            <h3 class="am-gallery-title">{$goodsList.goods_name}</h3>
+                            <div class="am-gallery-desc">
+                                <span class="hy-font-red am-fl hy-font-cny">￥{$goodsList.goods_price}</span>
+                                <a href="#" class="am-btn am-btn-xs am-btn-default am-radius am-fr">立即购买</a>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!--am-container end-->
+
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default index-nav"
+     id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+        <li>
+            <a href="{:U('Index/index')}">
+                <span class="am-icon-home"></span>
+                <span class="am-navbar-label">首页</span>
+            </a>
+        </li>
+        <li>
+            <a href="{:U('Goods/index')}" class="">
+                <span class="am-icon-bars"></span>
+                <span class="am-navbar-label">所有商品</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="">
+                <span class="am-icon-cart-plus"></span>
+                <span class="am-navbar-label">购物车</span>
+            </a>
+        </li>
+        <li>
+            <a href="###" class="">
+                <span class="am-icon-user"></span>
+                <span class="am-navbar-label">我的</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<!-- 公共底部 -->
+<include file="Public:footer" />
+</body>
+</html>

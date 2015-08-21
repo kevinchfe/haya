@@ -1,0 +1,156 @@
+<include file="Public/header"/>
+<link rel="stylesheet" href="__PUBLIC__/simditor/styles/simditor.css"/>
+<link rel="stylesheet" href="__PUBLIC__/webuploader/webuploader.css"/>
+<body>
+<div id="wrapper">
+    <include file="Public/nav"/>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <include file="Public/sidebar"/>
+        </div>
+        <div class="wrapper wrapper-content">
+            <!--面包屑-->
+            <include file="Public/crumb"/>
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>广告添加</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <form id="form" method="post" class="form-horizontal" action="{:U('Admin/Ad/insert')}">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">标题：</label>
+
+                                        <div class="col-sm-6">
+                                            <input type="text" name="ad_name" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告链接：</label>
+
+                                        <div class="col-sm-6">
+                                            <input type="text" name="ad_url" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告介绍：</label>
+
+                                        <div class="col-sm-10">
+                                            <textarea name="ad_desc" id="editor" placeholder="这里输入内容" autofocus>
+
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告图片：</label>
+
+                                        <div class="col-sm-6">
+                                            <!--用来存放item-->
+                                            <div id="fileList" class="uploader-list"></div>
+                                            <div id="filePicker">选择图片</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告图片：</label>
+
+                                        <div class="col-sm-6" id="pic-item">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-2">
+                                            <button class="btn btn-primary" type="submit">保存内容</button>
+                                            <button class="btn btn-white" type="reset">取消</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--load footer-->
+        <include file="Public/footer"/>
+        <script type="text/javascript" src="__PUBLIC__/simditor/scripts/module.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/simditor/scripts/hotkeys.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/simditor/scripts/simditor.js"></script>
+        <!--引入JS-->
+        <script type="text/javascript" src="__PUBLIC__/webuploader/webuploader.js"></script>
+
+
+        <script>
+            var editor = new Simditor({
+                textarea: $('#editor')
+            });
+
+            // 初始化Web Uploader
+            var uploader = WebUploader.create({
+
+                // 选完文件后，是否自动上传。
+                auto: true,
+
+                // swf文件路径
+                swf: '__PUBLIC__/webuploader/Uploader.swf',
+
+                // 文件接收服务端。
+                server: "{:U('Admin/Ad/ajaxUploader')}",
+
+                // 选择文件的按钮。可选。
+                // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+                pick: '#filePicker',
+
+                // 只允许选择图片文件。
+                accept: {
+                    title: 'Images',
+                    extensions: 'gif,jpg,jpeg,bmp,png',
+                    mimeTypes: 'image/*'
+                },
+
+
+            });
+
+            uploader.on('uploadAccept', function (file, response) {
+                //success
+                if (response._raw) {
+                    var input = '<input type="text" name="ad_path" value="' + response._raw + '">';
+                    console.log(input);
+                    $('#pic-item').append(input);
+                }
+            });
+
+        </script>
+
+        <script>
+            var ad_name = $("input[name='ad_name']");
+            var ad_desc = $("#editor");
+            $(function () {
+                $(".btn-primary").click(function () {
+                    if (ad_name.val() == '') {
+                        alert('标题不能为空');
+                        ad_name.focus();
+                        return false;
+                    }
+                    if (ad_desc.val() == '') {
+                        alert('内容不能为空');
+                        ad_desc.focus();
+                        return false;
+                    }
+
+                });
+
+            });
+
+        </script>
+
+
+
+

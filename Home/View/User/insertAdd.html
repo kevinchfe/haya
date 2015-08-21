@@ -1,0 +1,55 @@
+<!-- 公共头部 -->
+<include file="Public:header" />
+<header data-am-widget="header" class="am-header am-header-haiya divider">
+    <div class="am-header-left am-header-nav">
+        <a href="#">
+            <i class="am-icon-arrow-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">新建地址</a>
+    </h1>
+</header>
+<div class="am-container" id="container">
+    <form action="" method="post" class="am-form">
+        <div class="am-form-group">
+            <label for="doc-ipt-name-1">姓名:</label><br>
+            <input type="text" class="" id="doc-ipt-name-1" placeholder="请输入姓名">
+        </div>
+        <div class="am-form-group">
+            <div class="am-cf">
+                <div class="am-fl" style="width: 45%">
+                    <label for="doc-ipt-procince-1">省份:</label><br>
+                    <select name="province" id="">
+                        <option value="guangzhou">广东</option>
+                        <option value="hannan">海南</option>
+                    </select>
+                </div>
+                <div class="am-fr" style="width: 45%">
+                    <label for="doc-ipt-city-1">市:</label><br>
+                    <select name="city" id="">
+                        <option value="guangzhou">广州</option>
+                        <option value="hannan">深圳</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label for="doc-ipt-add-1">详细地址:</label><br>
+            <input type="text" class="" id="doc-ipt-add-1" placeholder="请输入详细地址">
+        </div>
+        <div class="am-form-group">
+            <label for="doc-ipt-phone-1">手机号码:</label><br>
+            <input type="text" class="" id="doc-ipt-phone-1" placeholder="请输入移动电话号码">
+        </div>
+        <input type="button" id="saveadd" class="am-btn am-btn-default am-round am-btn-success am-btn-block" value="保存地址">
+    </form>
+</div>
+
+<!-- 公共底部 -->
+<include file="Public:footer" />
+</body>
+</html>
+
+
+

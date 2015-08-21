@@ -1,0 +1,83 @@
+<!-- 公共头部 -->
+<include file="Public:header"/>
+<header data-am-widget="header" class="am-header am-header-haiya divider">
+    <div class="am-header-left am-header-nav">
+        <a href="#">
+            <i class="am-icon-arrow-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">编辑地址</a>
+    </h1>
+</header>
+<div class="am-container" id="container">
+    <form action="{:U('Home/User/editAdd')}" method="post" class="am-form">
+        <div class="am-form-group">
+            <label for="doc-ipt-name">姓名:</label><br>
+            <input type="text" class="" name="name" id="doc-ipt-name" placeholder="请输入姓名">
+        </div>
+        <div class="am-form-group">
+            <div class="am-cf">
+                <div class="am-fl" style="width: 45%">
+                    <label for="doc-ipt-procince-1">省份:</label><br>
+                    <select name="province" id="province">
+                        <option value="0">请选择</option>
+                        <volist name="list" id="province">
+                            <option value="{$province.id}">{$province.name}</option>
+                        </volist>
+                    </select>
+                </div>
+                <div class="am-fr" style="width: 45%">
+                    <label for="doc-ipt-city-1">市:</label><br>
+                    <select name="city" id="city">
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label for="doc-ipt-add">详细地址:</label><br>
+            <input type="text" class="" name="address" id="doc-ipt-add" placeholder="请输入详细地址">
+        </div>
+        <div class="am-form-group">
+            <label for="doc-ipt-phone">手机号码:</label><br>
+            <input type="text" class="" name="mobile" id="doc-ipt-phone" placeholder="请输入移动电话号码">
+        </div>
+        <input type="submit" id="saveadd" class="am-btn am-btn-default am-round am-btn-success am-btn-block"
+               value="保存地址">
+    </form>
+</div>
+
+<!-- 公共底部 -->
+<include file="Public:footer"/>
+
+<script>
+    $(function () {
+        var id = $('#province option:selected').val();
+        $('#province').change(function () {
+            var id = $('#province option:selected').val();
+            $.ajax({
+                type: 'post',
+                url: "{:U('Home/User/getCity')}",
+                data: 'id=' + id,
+                success: function (data) {
+                    $("#city").html(data);
+                    //console.log(data);
+                },
+            })
+        });
+//        $("form").submit(function () {
+//            if(id ==0){
+//                alert('请选择省份');
+//                return false;
+//            }
+//        })
+    })
+
+
+</script>
+</body>
+</html>
+
+
+

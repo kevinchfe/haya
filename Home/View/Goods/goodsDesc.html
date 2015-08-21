@@ -1,0 +1,159 @@
+<!-- 公共头部 -->
+<include file="Public:header"/>
+<!--导航头-->
+<include file="Public:top"/>
+
+<div class="am-container">
+
+    <div data-am-widget="slider" class="am-slider am-slider-c1" data-am-slider='{"directionNav":false}'>
+        <ul class="am-slides">
+            <volist name="goods_pic" id="list">
+                <li>
+                    <img src="__ROOT__/{$list.pic_url}">
+                </li>
+            </volist>
+        </ul>
+    </div>
+
+    <div class="goodsinfo">
+        <div class="goodsinfo-title am-serif">
+            <h3>
+                {$goodsInfo.goods_name}
+                <small class="">
+                    <br/>
+                    年中大促，买一百减五十
+                </small>
+                <span class="am-icon-heart-o am-fr" style="padding-right: 20px;" id="collect"></span>
+                <div class="am-cf"></div>
+            </h3>
+        </div>
+        <div class="">
+            <div class="am-fl goodsinfo-cny">
+                <span>￥:{$goodsInfo.goods_price}</span>
+            </div>
+            <div class="am-fr goodsinfo-y">
+                <span>顺丰包邮</span>
+            </div>
+        </div>
+        <div class="am-cf"></div>
+    </div>
+
+    <div class="goods-desc">
+
+        <div class="am-panel am-panel-default">
+            <div class="am-panel-hd" id="descinfo">
+                详情介绍
+                <span class="am-fr"><small>建议在WIFI下查看</small><i class="am-icon-chevron-right"></i></span>
+            </div>
+            <div style="display: none;" class="am-panel-bd" id="desc">
+                面板内容
+            </div>
+        </div>
+        <div class="am-panel am-panel-default">
+            <div class="am-panel-hd" id="Comment">
+                商品评价
+                <span class="am-fr">
+                    <i class="am-icon-chevron-right"></i>
+                </span>
+            </div>
+            <div style="display: none;" class="am-panel-bd" id="com-list">
+                面板内容
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="menu-nav">
+    <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+         id="">
+        <ul class="am-navbar-nav am-cf am-avg-sm-4">
+            <li>
+                <a href="#" class="am-btn" id="song">
+                    我要送人
+                </a>
+            </li>
+            <li>
+                <a href="#" class="am-btn" id="cart">
+                    立即购买
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--menu-nav end-->
+
+<!-- 公共底部 -->
+<include file="Public:footer"/>
+<script>
+
+
+    $(function(){
+        //显示商品详情
+        $('#descinfo').click(function () {
+            if($("#desc").css('display')=='none'){
+                $.ajax({
+                    type:'post',
+                    url:"{:U('Home/Goods/getAjaxDesc')}",
+                    data:'id={$goodsInfo.id}',
+                    success:function(data){
+                        $('#desc').show();
+                        $('#desc').html(data);
+                    }
+                });
+            }else{
+                $('#desc').hide();
+            }
+        });
+
+        //显示评论
+        $('#Comment').click(function(){
+            if($("#com-list").css('display')=='none'){
+                $.ajax({
+                    type: 'post',
+                    url: "{:U('Home/Goods/getAjaxComment')}",
+                    data: 'id={$goodsInfo.id}',
+                    success: function (data) {
+                        $('#com-list').show();
+                        $('#com-list').html(data);
+                    }
+                });
+            }else{
+                $('#com-list').hide();
+            }
+        });
+
+        //收藏
+        $('#collect').click(function () {
+            //alert($("#collect").attr('class'));
+            if($("#collect").attr('class')=='am-icon-heart-o am-fr'){
+                $.ajax({
+                    type:'post',
+                    url:"{:U('Home/User/collect')}",
+                    data:"id={$goodsInfo.id}",
+                    success: function (data) {
+                        $('#collect').attr('class','am-icon-heart am-fr');
+                    },
+                });
+
+            }else{
+                $.ajax({
+                    type:'post',
+                    url:"{:U('Home/User/cancleCollect')}",
+                    data:"id={$goodsInfo.id}",
+                    success:function(data){
+                        $('#collect').attr('class','am-icon-heart-o am-fr');
+                    }
+                });
+
+            }
+
+        })
+
+    })
+
+</script>
+
+
+</body>
+</html>

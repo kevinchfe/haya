@@ -1,0 +1,36 @@
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <volist name="data" id="com">
+
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left am-margin-vertical"
+                    style="border:none;border-bottom: 1px solid #ccc;">
+                    <div class="am-u-sm-2">
+                        <a href=" class="">
+                          <img style="width:50px;height:50px;" src="Public\Upload\Goods\Images\20150729\s_55b89b0a33f15.jpg" alt=""/>
+                        </a>
+                    </div>
+                    <div class="am-u-sm-10">
+                        <span>qq</span><br>
+                        <span class="am-fl"><small>购买款式：高端大气上档次</small></span>
+                        <span class="am-fr"><small>购买数量：2</small></span>
+                        <div class="am-cf"></div>
+                        <span>{$com.add_time|date="y-m-d H:i",###}</span>
+                    </div>
+                    <div class="am-u-sm-12">
+                        <span>{$com.content|htmlspecialchars_decode}</span>
+                    </div>
+                </li>
+
+            </volist>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>首页</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header data-am-widget="header" class="am-header am-header-haiya">
+    <div class="am-header-left am-header-nav">
+        <a>
+            <i class="am-icon-arrow-left"></i>
+        </a>
+    </div>
+
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">彩聚商城</a>
+    </h1>
+
+</header>
+<!--header end-->
+<div class="row">
+    <ul class="hy-cart">
+        <li>
+            <a>
+                <h4>选择送礼人地址</h4>
+            </a>
+        </li>
+
+        <li>
+            <a>
+                <h4>选择收礼人地址</h4>
+            </a>
+        </li>
+    </ul>
+</div>
+<form action="" class="am-form hy-cart-form">
+    <div class="am-input-group">
+        <span class="am-input-group-label">发货时间</span>
+        <input type="text" class="am-form-field" placeholder="发货时间">
+        <span class="am-input-group-label"><i class="am-icon-clock-o"></i></span>
+    </div>
+    <div class="am-input-group">
+        <span class="am-input-group-label">留言</span>
+        <input type="text" class="am-form-field" placeholder="">
+    </div>
+    <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+        <h2>订单信息</h2>
+    </div>
+    <ul class="hy-cart-list am-avg-sm-1">
+        <li>
+            <div class="row">
+                <div class="am-u-sm-4">
+                    <img src="images/123456.jpg" width="120" height="100">
+                </div>
+                <div class="am-u-sm-8">
+                    <h5>施华洛世奇(Swarovski)夏季</h5>
+                    <div class="am-cf hy-cart-number">
+                        <span class="am-fl">数量：</span>
+                        <a class="am-fl am-text-middle">-</a>
+                        <input type="text" class="am-fl" style="width: 26px; height: 26px;" value="1">
+                        <a class="am-fl am-text-middle">+</a>
+                    </div>
+                    <p>价格：299.00</p>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="am-u-sm-4">
+                    <img src="images/123456.jpg" width="120" height="100">
+                </div>
+                <div class="am-u-sm-8">
+                    <h5>施华洛世奇(Swarovski)夏季</h5>
+                    <div class="am-cf hy-cart-number">
+                        <span class="am-fl">数量：</span>
+                        <a class="am-fl am-text-middle">-</a>
+                        <input type="text" class="am-fl" style="width: 26px; height: 26px;" value="1">
+                        <a class="am-fl am-text-middle">+</a>
+                    </div>
+                    <p>价格：299.00</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="am-input-group">
+        <span class="am-input-group-label">选择快递</span>
+        <select>
+            <option>顺丰 包邮</option>
+            <option>圆通</option>
+            <option>中通</option>
+        </select>
+    </div>
+    <div class="am-input-group">
+        <span class="am-input-group-label">共计1件商品 合计￥8999元</span>
+    </div>
+    <div class="am-input-group am-btn-group doc-js-btn-1 am-avg-sm-4" data-am-button>
+        <span class="am-input-group-label">订单支付</span>
+        <label class="am-btn am-btn-primary">
+            <input type="radio" name="options" value="1" id="option1"> 微信支付
+        </label>
+        <label class="am-btn am-btn-primary">
+            <input type="radio" name="options" value="2" id="option1"> 网银支付
+        </label>
+        <label class="am-btn am-btn-primary">
+            <input type="radio" name="options" value="3" id="option1"> 支付宝支付
+        </label>
+
+    </div>
+    <div id="cart-submit">
+        <p class="am-center">
+        共计1件商品 合计<span class="am-text-danger">￥8999</span>元
+            <input type="submit" value="提交订单" class="am-btn am-btn-danger am-fr">
+        </p>
+    </div>
+</form>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+</body>
+</html>

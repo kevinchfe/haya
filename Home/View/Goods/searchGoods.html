@@ -1,0 +1,31 @@
+<!-- 公共头部 -->
+<include file="Public:header"/>
+<header data-am-widget="header" class="am-header am-header-haiya divider">
+    <div class="am-header-left am-header-nav">
+        <a href="#">
+            <i class="am-icon-arrow-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">搜索商品</a>
+    </h1>
+</header>
+<div class="am-container" id="container">
+    <form action="{:U('Home/Goods/searchRes')}" method="post" class="am-form">
+        <div class="am-form-group">
+            <label for="doc-ipt-name">商品名称:</label><br>
+            <input type="text" class="" name="goods_name" id="doc-ipt-name" placeholder="请输入商品名称">
+        </div>
+
+        <input type="submit" id="saveadd" class="am-btn am-btn-default am-round am-btn-success am-btn-block"
+               value="保存地址">
+    </form>
+</div>
+
+<!-- 公共底部 -->
+<include file="Public:footer"/>
+</body>
+</html>
+
+
+

@@ -1,0 +1,19 @@
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/Home/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/Home/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/Home/assets/js/amazeui.min.js"></script>
+<script>
+    $(function(){
+        $('#previous').click(function(){
+            history.go(-1);
+        });
+    });
+
+    var title =  $('.am-header-title').find("a").html();
+    document.title=title;
+</script>

@@ -1,0 +1,80 @@
+<!-- 公共头部 -->
+<include file="Public:header"/>
+<!--导航头-->
+<include file="Public:top" />
+
+<ul class="hy-list list-goods">
+    <volist name="list" id="list">
+    <li>
+        <div class="am-u-sm-4">
+            <a href="{:U('Home/Goods/goodsDesc?gid='.$list['id'].'')}">
+                <img src="__ROOT__/{$list.pic_url}" alt="" class="am-thumbnail">
+            </a>
+        </div>
+        <div class="am-u-sm-8">
+            <a href="{:U('Home/Goods/goodsDesc?gid='.$list['id'].'')}">
+                <h5>{$list.goods_name}</h5>
+            </a>
+            <s>原价￥:{$list.original_price}RMB</s>
+            <p>本店￥:<span class="am-text-danger">{$list.goods_price}RMB</span></p>
+            <a class="am-btn am-btn-danger cart">加入购物车</a>
+        </div>
+        <div class="am-cf"></div>
+    </li>
+    </volist>
+</ul>
+
+
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+        <li>
+            <a href="{:U('Home/Index/index')}" class="">
+                <span class="am-icon-home"></span>
+                <span class="am-navbar-label">首页</span>
+            </a>
+        </li>
+        <li>
+            <a href="" class="">
+                <span class="am-icon-shopping-cart"></span>
+                <span class="am-navbar-label">购物车</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="">
+                <span class="am-icon-user"></span>
+                <span class="am-navbar-label">我的</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- 公共底部 -->
+<include file="Public:footer"/>
+<script>
+    $(function(){
+        $('.cart').click(function(){
+            $.ajax({
+                type:'post',
+                url:"{:U('Home/Cart/addAjaxCart')}",
+                data:'id={$list.id}',
+                success:function(data){
+                    console.log(data);
+            }
+            })
+
+
+        })
+
+
+
+    })
+
+</script>
+</body>
+</html>
+
+
+

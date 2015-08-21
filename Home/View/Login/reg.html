@@ -1,0 +1,60 @@
+<!-- 公共头部 -->
+<include file="Public:header" />
+<header data-am-widget="header" class="am-header am-header-haiya divider">
+    <div class="am-header-left am-header-nav" id="previous">
+        <a href="#">
+            <i class="am-icon-arrow-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">注册</a>
+    </h1>
+</header>
+<div class="am-container" id="container">
+    <form action="{:U('register')}" method="post" class="am-form" data-am-validator>
+
+        <div class="am-form-group">
+            <label for="doc-ipt-phone">手机号码:</label><br>
+            <input type="text" class="" name="mobile" id="doc-ipt-phone" placeholder="请输入移动电话号码" required/>
+        </div>
+        <div class="am-form-group">
+            <label for="doc-vld-pwd-1">登录密码:</label><br>
+            <input type="password" class="" name="password" id="doc-vld-pwd-1" placeholder="请输入登录密码" required/>
+        </div>
+        <div class="am-form-group">
+            <label for="doc-vld-pwd-2">确认登录密码:</label><br>
+            <input type="password" class="" name="pwdcheck" id="doc-vld-pwd-2" placeholder="请再次输入登录密码" data-equal-to="#doc-vld-pwd-1"
+                   required/>
+        </div>
+        <div class="am-form-group">
+            <label for="doc-vld-name">姓名:</label><br>
+            <input type="text" class="" name="username" id="doc-vld-name" placeholder="请输入姓名（可选）"/>
+        </div>
+        <div class="am-form-group">
+            <label for="doc-vld-name">性别:</label><br>
+            <select name="sex" id="">
+                <option value="0">保密</option>
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select>
+        </div>
+
+        <div class="am-form-group">
+            <label for="doc-ipt-email">电子邮箱:</label><br>
+            <input type="email" name="email" class="" id="doc-ipt-email" placeholder="请输入电子邮箱（可选）">
+        </div>
+        <input type="submit" id="register" class="am-btn am-btn-default am-round am-btn-success am-btn-block"
+               value="确认注册">
+    </form>
+</div>
+
+<!-- 公共底部 -->
+<include file="Public:footer" />
+
+
+
+</body>
+</html>
+
+
+
